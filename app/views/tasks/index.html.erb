@@ -1,0 +1,19 @@
+<div class="container">
+<div class="col-xs-12">
+<h1>My Tasks</h1>
+
+<% @tasks.each do |task| %>
+<%# <div class="custom-control custom-checkbox">
+<input type="checkbox" class="custom-control-input" id="customCheck1">
+<label class="custom-control-label" for="customCheck1"> %>
+<ul>
+<li><%= icon('fas', 'check-circle')%><%= link_to task.title, task_path(task)%></li>
+</ul>
+<%# </label>
+</div> %>
+<% end %>
+<%= link_to tasks_new_path do %>
+<%= icon('fas', 'plus') %>
+<% end %>
+</div>
+</div>

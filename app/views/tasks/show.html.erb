@@ -1,0 +1,13 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+
+<%= check_box_tag(:completed) %>
+<%= label_tag(:completed, "This task is completed") %>
+
+<%= link_to "Back to Home", tasks_path %>
+<%= link_to "Edit", edit_task_path %>
+
+<%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
